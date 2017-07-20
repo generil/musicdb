@@ -1,0 +1,30 @@
+create table record(record_id bigserial primary key);
+
+create table artist (artist_id bigint primary key, artist_name character varying, artist_description character varying, artist_country character varying, artist_year_started integer);
+create table album (album_id bigserial primary key, album_title character varying, album_label character varying, album_release_date timestamp without time zone);
+create table track (track_id bigserial primary key, track_title character varying, track_duration int, track_release_date timestamp without time zone);
+create table genre (genre_id bigserial primary key, genre_type character varying);
+
+create table artist_album (artist_id bigint, album_id bigint);
+create table artist_track (artist_id bigint, track_id bigint);
+create table album_track (album_id bigint, track_id bigint);
+create table track_genre (track_id bigint, genre_id bigint);
+
+alter table artist add foreign key (artist_id) references record(record_id) on delete cascade on update cascade ;
+
+alter table artist_album add primary key (artist_id,album_id);
+alter table artist_track add primary key (artist_id,track_id);
+alter table album_track add primary key (album_id,track_id);
+alter table track_genre add primary key (track_id,genre_id);
+
+alter table artist_album add foreign key (artist_id) references artist(artist_id) on delete cascade on update cascade;
+alter table artist_album add foreign key (album_id) references album(album_id) on delete cascade on update cascade;
+
+alter table artist_track add foreign key (artist_id) references artist(artist_id) on delete cascade on update cascade;
+alter table artist_track add foreign key (track_id) references track(track_id) on delete cascade on update cascade;
+
+alter table album_track add foreign key (album_id) references album(album_id) on delete cascade on update cascade;
+alter table album_track add foreign key (track_id) references track(track_id) on delete cascade on update cascade;
+
+alter table track_genre add foreign key (track_id) references track(track_id) on delete cascade on update cascade;
+alter table track_genre add foreign key (genre_id) references genre(genre_id) on delete cascade on update cascade;
