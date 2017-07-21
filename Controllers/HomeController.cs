@@ -14,6 +14,26 @@ namespace musicdb.Controllers
             return View();
         }
 
+        public IActionResult Artists()
+        {
+            return View();
+        }
+
+        public IActionResult Albums()
+        {
+            return View();
+        }
+
+        public IActionResult Tracks()
+        {
+            return View();
+        }
+
+        public IActionResult Genres()
+        {
+            return View();
+        }
+
         public IActionResult Welcome(string name, int numTimes)
         {
             ViewData["Message"] = "Hello " + name;
