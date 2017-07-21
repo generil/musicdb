@@ -14,9 +14,11 @@ namespace musicdb.Controllers
             return View();
         }
 
-        public string Welcome(string name, int numTimes)
+        public IActionResult Welcome(string name, int numTimes)
         {
-            return HtmlEncoder.Default.Encode($"Hello {name} {numTimes}");
+            ViewData["Message"] = "Hello " + name;
+            ViewData["NumTimes"] = numTimes;
+            return View();
         }
     }
 }
