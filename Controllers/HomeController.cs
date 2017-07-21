@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using System.Text.Encodings.Web;
 using Microsoft.AspNetCore.Mvc;
 
 namespace musicdb.Controllers
@@ -13,23 +14,9 @@ namespace musicdb.Controllers
             return View();
         }
 
-        public IActionResult About()
+        public string Welcome(string name, int numTimes)
         {
-            ViewData["Message"] = "Your application description page.";
-
-            return View();
-        }
-
-        public IActionResult Contact()
-        {
-            ViewData["Message"] = "Your contact page.";
-
-            return View();
-        }
-
-        public IActionResult Error()
-        {
-            return View();
+            return HtmlEncoder.Default.Encode($"Hello {name} {numTimes}");
         }
     }
 }
