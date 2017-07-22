@@ -31,7 +31,7 @@ namespace Music.Controllers
             }
             catch (ArgumentException e)
             {
-                log.LogError("Error deleting an album. ID not found. " + e.Message);
+                log.LogError("The album with the id :" + id + " does not exist." + e.Message);
                 return NotFound(StatusCodes.Status404NotFound);
             }
 
@@ -53,12 +53,12 @@ namespace Music.Controllers
             }
             catch (ArgumentException e)
             {
-                log.LogError("Error retrieving an album. ID not found. " + e.Message);
+                log.LogError("The album with the id :" + id + " does not exist." + e.Message);
                 return NotFound(StatusCodes.Status404NotFound);
             }
             catch (Exception e)
             {
-                log.LogError("Connection error when retrieving album. " + e.Message);
+                log.LogError("Something happened when getting an album. " + e.Message);
                 return StatusCode(StatusCodes.Status500InternalServerError);
             }
         }
@@ -72,7 +72,7 @@ namespace Music.Controllers
             }
             catch (ArgumentException e)
             {
-                log.LogError("Error adding a new book. ID not found. " + e.Message);
+                log.LogError("The album with the id :" + id + " does not exist." + e.Message);
                 return NotFound(StatusCodes.Status404NotFound);
             }
 
@@ -88,7 +88,7 @@ namespace Music.Controllers
             }
             catch (ArgumentException e)
             {
-                log.LogError("Error on adding a new book. ID not found. " + e.Message);
+                log.LogError("The album with the id :" + id + " does not exist." + e.Message);
                 return NotFound(StatusCodes.Status404NotFound);
             }
 

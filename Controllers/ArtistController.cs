@@ -31,7 +31,7 @@ namespace Music.Controllers
             }
             catch (ArgumentException e)
             {
-                log.LogError("Connection error. " + e.Message);
+                log.LogError("Something happened when creating an artist. " + e.Message);
                 return StatusCode(StatusCodes.Status500InternalServerError);
             }
 
@@ -53,12 +53,12 @@ namespace Music.Controllers
             }
             catch (ArgumentException e)
             {
-                log.LogError("Error getting an artist. ID not found. " + e.Message);
+                log.LogError("An artist with the id :" + id + " does not exist." + e.Message);
                 return NotFound(StatusCodes.Status404NotFound);
             }
             catch (Exception e)
             {
-                log.LogError("Connection error when retrieving artist. " + e.Message);
+                log.LogError("Something happened when retrieving an artist. " + e.Message);
                 return StatusCode(StatusCodes.Status500InternalServerError);
             }
         }
@@ -72,12 +72,12 @@ namespace Music.Controllers
             }
             catch (ArgumentException e)
             {
-                log.LogError("Error updating artist information. ID not found. " + e.Message);
+                log.LogError("An artist with the id :" + id + " does not exist." + e.Message);
                 return NotFound(StatusCodes.Status404NotFound);
             }
             catch (Exception e)
             {
-                log.LogError("Connection error when updating artist information. " + e.Message);
+                log.LogError("Something happened when modifying an artist. " + e.Message);
                 return StatusCode(StatusCodes.Status500InternalServerError);
             }
 
@@ -93,7 +93,7 @@ namespace Music.Controllers
             }
             catch (ArgumentException e)
             {
-                log.LogError("Error deleting an artist. ID not found. " + e.Message);
+                log.LogError("An artist with the id :" + id + " does not exist." + e.Message);
                 return NotFound(StatusCodes.Status404NotFound);
             }
 
@@ -111,7 +111,7 @@ namespace Music.Controllers
             }
             catch (ArgumentException e)
             {
-                log.LogError("Error adding a track. ID not found. " + e.Message);
+                log.LogError("An artist with the id :" + id + " does not exist." + e.Message);
                 return NotFound(StatusCodes.Status404NotFound);
             }
 
@@ -127,7 +127,7 @@ namespace Music.Controllers
             }
             catch (ArgumentException e)
             {
-                log.LogError("Error adding an album. ID not found. " + e.Message);
+                log.LogError("An artist with the id :" + id + " does not exist." + e.Message);
                 return NotFound(StatusCodes.Status404NotFound);
             }
 

@@ -31,7 +31,7 @@ namespace Music.Controllers
             }
             catch (ArgumentException e)
             {
-                log.LogError("Error on adding a new book. " + e.Message);
+                log.LogError("The track with the id :" + id + " does not exist." + e.Message);
                 return NotFound(StatusCodes.Status404NotFound);
             }
 
@@ -47,7 +47,7 @@ namespace Music.Controllers
             }
             catch (ArgumentException e)
             {
-                log.LogError("Error on adding a new book. " + e.Message);
+                log.LogError("The track with the id :" + id + " does not exist." + e.Message);
                 return NotFound(StatusCodes.Status404NotFound);
             }
 
@@ -63,7 +63,7 @@ namespace Music.Controllers
             }
             catch (ArgumentException e)
             {
-                log.LogError("Error on adding a new book. " + e.Message);
+                log.LogError("The track with the id :" + id + " does not exist." + e.Message);
                 return NotFound(StatusCodes.Status404NotFound);
             }
 
@@ -80,7 +80,7 @@ namespace Music.Controllers
 
             catch (ArgumentException e)
             {
-                log.LogError("Error deleting a track. ID not found. " + e.Message);
+                log.LogError("The track with the id :" + id + " does not exist." + e.Message);
                 return NotFound(StatusCodes.Status404NotFound);
             }
 
@@ -102,12 +102,12 @@ namespace Music.Controllers
             }
             catch (ArgumentException e)
             {
-                log.LogError("Error retrieving a track. ID not found. " + e.Message);
+                log.LogError("The track with the id :" + id + " does not exist." + e.Message);
                 return NotFound(StatusCodes.Status404NotFound);
             }
             catch (Exception e)
             {
-                log.LogError("Connection error when retrieving a track. " + e.Message);
+                log.LogError("Something happened when retrieving a track. " + e.Message);
                 return StatusCode(StatusCodes.Status500InternalServerError);
             }
         }

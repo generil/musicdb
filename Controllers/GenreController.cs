@@ -31,7 +31,7 @@ namespace Music.Controllers
             }
             catch (ArgumentException e)
             {
-                log.LogError("Connection error. " + e.Message);
+                log.LogError("Something happened when creating a genre. " + e.Message);
                 return StatusCode(StatusCodes.Status500InternalServerError);
             }
 
@@ -47,7 +47,7 @@ namespace Music.Controllers
             }
             catch (ArgumentException e)
             {
-                log.LogError("Error deleting genre. ID not found. " + e.Message);
+                log.LogError("The genre with the id :" + id + " does not exist." + e.Message);
                 return NotFound(StatusCodes.Status404NotFound);
             }
 
@@ -69,12 +69,12 @@ namespace Music.Controllers
             }
             catch (ArgumentException e)
             {
-                log.LogError("Error retrieving a genre. ID not found. " + e.Message);
+                log.LogError("The genre with the id :" + id + " does not exist." + e.Message);
                 return NotFound(StatusCodes.Status404NotFound);
             }
             catch (Exception e)
             {
-                log.LogError("Connection error when retrieving genre. " + e.Message);
+                log.LogError("Something happened when retrieving a genre. " + e.Message);
                 return StatusCode(StatusCodes.Status500InternalServerError);
             }
         }
@@ -88,7 +88,7 @@ namespace Music.Controllers
             }
             catch (ArgumentException e)
             {
-                log.LogError("Error on adding a new book. " + e.Message);
+                log.LogError("The genre with the id :" + id + " does not exist." + e.Message);
                 return NotFound(StatusCodes.Status404NotFound);
             }
 
