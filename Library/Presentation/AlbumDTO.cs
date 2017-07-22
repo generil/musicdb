@@ -5,16 +5,16 @@ namespace Music.Presentation
 {
     public class AlbumDTO : BaseDTO
     {
-        public ICollection<TrackDTO> Tracks { get; set; }
-        public ICollection<ArtistDTO> Artists { get; set; }
+        public ICollection<TrackDetailDTO> Tracks { get; set; }
+        public ICollection<ArtistDetailDTO> Artists { get; set; }
         public string Title { get; set; }
         public string RecordLabel { get; set; }
         public DateTime ReleaseDate { get; set; }
 
         public AlbumDTO()
         {
-            Tracks = new LinkedList<TrackDTO>();
-            Artists = new LinkedList<ArtistDTO>();
+            Tracks = new LinkedList<TrackDetailDTO>();
+            Artists = new LinkedList<ArtistDetailDTO>();
         }
 
         public AlbumDTO(long id, string title, string label, DateTime release) : this()

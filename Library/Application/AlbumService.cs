@@ -94,12 +94,12 @@ namespace Music.Application
 
             foreach (var track in album.Tracks)
             {
-                albumDTO.Tracks.Add(new TrackDTO(track.Track.Id, track.Track.Title, track.Track.Duration, track.Track.ReleaseDate));
+                albumDTO.Tracks.Add(new TrackDetailDTO(track.Track.Title, track.Track.Duration, track.Track.ReleaseDate));
             }
 
             foreach (var artist in album.Artists)
             {
-                albumDTO.Artists.Add(new ArtistDTO(artist.Artist.Id, artist.Artist.Name, artist.Artist.Description, artist.Artist.Country, artist.Artist.YearActive));
+                albumDTO.Artists.Add(new ArtistDetailDTO(artist.Artist.Name, artist.Artist.Description, artist.Artist.Country, artist.Artist.YearActive));
             }
 
             return albumDTO;
@@ -116,12 +116,12 @@ namespace Music.Application
 
                 foreach (var track in album.Tracks)
                 {
-                    albumDTO.Tracks.Add(new TrackDTO(track.Track.Id, track.Track.Title, track.Track.Duration, track.Track.ReleaseDate));
+                    albumDTO.Tracks.Add(new TrackDetailDTO(track.Track.Title, track.Track.Duration, track.Track.ReleaseDate));
                 }
 
                 foreach (var artist in album.Artists)
                 {
-                    albumDTO.Artists.Add(new ArtistDTO(artist.Artist.Id, artist.Artist.Name, artist.Artist.Description, artist.Artist.Country, artist.Artist.YearActive));
+                    albumDTO.Artists.Add(new ArtistDetailDTO(artist.Artist.Name, artist.Artist.Description, artist.Artist.Country, artist.Artist.YearActive));
                 }
 
                 albumDTOs.Add(albumDTO);

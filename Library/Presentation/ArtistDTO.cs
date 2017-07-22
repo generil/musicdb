@@ -5,8 +5,8 @@ namespace Music.Presentation
 {
     public class ArtistDTO : RecordDTO
     {
-        public ICollection<AlbumDTO> Albums { get; set; }
-        public ICollection<TrackDTO> Tracks { get; set; }
+        public ICollection<AlbumDetailDTO> Albums { get; set; }
+        public ICollection<TrackDetailDTO> Tracks { get; set; }
         public string Name { get; set; }
         public string Description { get; set; }
         public string Country { get; set; }
@@ -14,8 +14,8 @@ namespace Music.Presentation
 
         public ArtistDTO()
         {
-            Albums = new LinkedList<AlbumDTO>();
-            Tracks = new LinkedList<TrackDTO>();
+            Albums = new LinkedList<AlbumDetailDTO>();
+            Tracks = new LinkedList<TrackDetailDTO>();
         }
 
         public ArtistDTO(long id, string name, string description, string country, int year) : this()

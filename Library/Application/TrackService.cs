@@ -112,17 +112,17 @@ namespace Music.Application
 
             foreach (var album in track.Albums)
             {
-                trackDTO.Albums.Add(new AlbumDTO(album.Album.Id, album.Album.Title, album.Album.RecordLabel, album.Album.ReleaseDate));
+                trackDTO.Albums.Add(new AlbumDetailDTO(album.Album.Title, album.Album.RecordLabel, album.Album.ReleaseDate));
             }
 
             foreach (var artist in track.Artists)
             {
-                trackDTO.Artists.Add(new ArtistDTO(artist.Artist.Id, artist.Artist.Name, artist.Artist.Description, artist.Artist.Country, artist.Artist.YearActive));
+                trackDTO.Artists.Add(new ArtistDetailDTO(artist.Artist.Name, artist.Artist.Description, artist.Artist.Country, artist.Artist.YearActive));
             }
 
             foreach (var genre in track.Genres)
             {
-                trackDTO.Genres.Add(new GenreDTO(genre.Genre.Id, genre.Genre.Type));
+                trackDTO.Genres.Add(new GenreDetailDTO(genre.Genre.Type));
             }
 
             return trackDTO;
@@ -139,17 +139,17 @@ namespace Music.Application
 
                 foreach (var album in track.Albums)
                 {
-                    trackDTO.Albums.Add(new AlbumDTO(album.Album.Id, album.Album.Title, album.Album.RecordLabel, album.Album.ReleaseDate));
+                    trackDTO.Albums.Add(new AlbumDetailDTO(album.Album.Title, album.Album.RecordLabel, album.Album.ReleaseDate));
                 }
 
                 foreach (var artist in track.Artists)
                 {
-                    trackDTO.Artists.Add(new ArtistDTO(artist.Artist.Id, artist.Artist.Name, artist.Artist.Description, artist.Artist.Country, artist.Artist.YearActive));
+                    trackDTO.Artists.Add(new ArtistDetailDTO(artist.Artist.Name, artist.Artist.Description, artist.Artist.Country, artist.Artist.YearActive));
                 }
 
                 foreach (var genre in track.Genres)
                 {
-                    trackDTO.Genres.Add(new GenreDTO(genre.Genre.Id, genre.Genre.Type));
+                    trackDTO.Genres.Add(new GenreDetailDTO(genre.Genre.Type));
                 }
 
                 trackDTOs.Add(trackDTO);

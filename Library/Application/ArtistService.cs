@@ -99,12 +99,12 @@ namespace Music.Application
 
             foreach (var track in artist.Tracks)
             {
-                artistDTO.Tracks.Add(new TrackDTO(track.Track.Id, track.Track.Title, track.Track.Duration, track.Track.ReleaseDate));
+                artistDTO.Tracks.Add(new TrackDetailDTO(track.Track.Title, track.Track.Duration, track.Track.ReleaseDate));
             }
 
             foreach (var album in artist.Albums)
             {
-                artistDTO.Albums.Add(new AlbumDTO(album.Album.Id, album.Album.Title, album.Album.RecordLabel, album.Album.ReleaseDate));
+                artistDTO.Albums.Add(new AlbumDetailDTO(album.Album.Title, album.Album.RecordLabel, album.Album.ReleaseDate));
             }
 
             return artistDTO;
@@ -123,7 +123,7 @@ namespace Music.Application
                 {
                     foreach (var track in artist.Tracks)
                     {
-                        artistDTO.Tracks.Add(new TrackDTO(track.Track.Id, track.Track.Title, track.Track.Duration, track.Track.ReleaseDate));
+                        artistDTO.Tracks.Add(new TrackDetailDTO(track.Track.Title, track.Track.Duration, track.Track.ReleaseDate));
                     }
                 }
 
@@ -131,7 +131,7 @@ namespace Music.Application
                 {
                     foreach (var album in artist.Albums)
                     {
-                        artistDTO.Albums.Add(new AlbumDTO(album.Album.Id, album.Album.Title, album.Album.RecordLabel, album.Album.ReleaseDate));
+                        artistDTO.Albums.Add(new AlbumDetailDTO(album.Album.Title, album.Album.RecordLabel, album.Album.ReleaseDate));
                     }
                 }
 

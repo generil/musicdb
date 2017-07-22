@@ -85,7 +85,7 @@ namespace Music.Application
 
             foreach (var track in genre.Tracks)
             {
-                GenreDTO.Tracks.Add(new TrackDTO(track.Track.Id, track.Track.Title, track.Track.Duration, track.Track.ReleaseDate));
+                GenreDTO.Tracks.Add(new TrackDetailDTO(track.Track.Title, track.Track.Duration, track.Track.ReleaseDate));
             }
 
             return GenreDTO;
@@ -102,7 +102,7 @@ namespace Music.Application
 
                 foreach (var track in genre.Tracks)
                 {
-                    GenreDTO.Tracks.Add(new TrackDTO(track.Track.Id, track.Track.Title, track.Track.Duration, track.Track.ReleaseDate));
+                    GenreDTO.Tracks.Add(new TrackDetailDTO(track.Track.Title, track.Track.Duration, track.Track.ReleaseDate));
                 }
 
                 GenreDTOs.Add(GenreDTO);
